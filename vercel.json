@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "buildCommand": "pnpm --filter @workspace/eternity run build",
+  "installCommand": "pnpm install",
+  "outputDirectory": "artifacts/eternity/dist/public",
+  "framework": null,
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/index.ts"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/artifacts/eternity/dist/public/index.html"
+    }
+  ]
+}

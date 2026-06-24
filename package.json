@@ -1,0 +1,19 @@
+{
+  "name": "workspace",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev:frontend": "pnpm --filter @workspace/eternity run dev",
+    "dev:api": "pnpm --filter @workspace/api-server run dev",
+    "build": "pnpm -r --if-present run build",
+    "typecheck:libs": "tsc --build",
+    "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --if-present run typecheck",
+    "db:push": "pnpm --filter @workspace/db run push"
+  },
+  "private": true,
+  "devDependencies": {
+    "@vercel/node": "^3.0.0",
+    "prettier": "^3.8.3",
+    "typescript": "~5.9.3"
+  }
+}
